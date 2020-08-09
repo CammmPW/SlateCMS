@@ -1,0 +1,17 @@
+import React from 'react';
+import { BusinessRow } from 'components';
+import { Icon } from 'slate-frontend';
+import { UserProfileWidgetProps } from '../UserProfile.types';
+
+export function UserEmployment({ profile }: UserProfileWidgetProps) {
+  return (
+    <div className="mt-4 no-user-count">
+      <h3>Employment</h3>
+      {profile?.stats?.job?.business ? (
+        <BusinessRow business={profile.stats.job.business} />
+      ) : (
+        <Icon className="fa-spin" family="fas" type="spinner" />
+      )}
+    </div>
+  );
+}
